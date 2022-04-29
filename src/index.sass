@@ -1,0 +1,51 @@
+$font-color: #15ff00
+
+@import url('https://fonts.googleapis.com/css2?family=Coda&display=swap')
+
+// App
+*
+    font-family: 'Coda', cursive
+    color: $font-color
+    background-color: black
+
+.app
+    position: relative
+    margin: auto
+    width: 80%
+
+.case
+    border: 3px solid $font-color
+    border-radius: 10px
+
+// Teclado
+input
+    border: 2px solid $font-color
+    border-radius: 10px
+    margin: 10px
+    background-color: black
+    height: 70px
+    font-size: 24px
+input:hover
+    background-color: $font-color
+    color: black
+.teclado
+    background-color: #ffffff00
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-template-rows: repeat(4, 1fr)
+
+// Display
+.display
+    margin: 10px
+    border-radius: 10px
+    height: 90px
+    border: 2px solid $font-color
+    font-size: 25px
+    h4
+        margin: auto
+        width: fit-content
+        background-color: #ffffff00
+        position: relative
+    h3
+        @extend h4
+

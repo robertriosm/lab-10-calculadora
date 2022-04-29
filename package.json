@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/robertriosm/lab-10-calculadora#readme",
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
@@ -37,12 +38,12 @@
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
-    "@webpack-cli/generators": "^2.4.2",
     "babel-loader": "^8.2.5",
     "bundle-loader": "^0.5.6",
     "css-loader": "^6.7.1",
     "eslint": "^8.14.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
