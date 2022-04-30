@@ -17,17 +17,28 @@ $font-color: #15ff00
     border: 3px solid $font-color
     border-radius: 10px
 
-// Teclado
-input
+// Tecla
+.tecla
     border: 2px solid $font-color
     border-radius: 10px
     margin: 10px
+
+input
+    border: 0
+    border-radius: 10px
     background-color: black
     height: 70px
     font-size: 24px
-input:hover
+    width: 100%
+
+.tecla:hover
     background-color: $font-color
     color: black
+    input
+        background-color: $font-color
+        color: black
+
+// Teclado
 .teclado
     background-color: #ffffff00
     display: grid

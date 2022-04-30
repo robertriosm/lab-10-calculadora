@@ -1,29 +1,30 @@
 import React from 'react'
+import Tecla from './Tecla'
 // import PropTypes from 'prop-types'
 
 function Teclado() {
   return (
     <div className="teclado">
-      <input type="button" value="+/-" />
-      <input type="button" value="==" />
-      <input type="button" value="%" />
-      <input type="button" value="AC" />
-      <input type="button" value="7" />
-      <input type="button" value="8" />
-      <input type="button" value="9" />
-      <input type="button" value="/" />
-      <input type="button" value="4" />
-      <input type="button" value="5" />
-      <input type="button" value="6" />
-      <input type="button" value="x" />
-      <input type="button" value="1" />
-      <input type="button" value="2" />
-      <input type="button" value="3" />
-      <input type="button" value="-" />
-      <input type="button" value="0" />
-      <input type="button" value="." />
-      <input type="button" value="=" />
-      <input type="button" value="+" />
+      <Tecla Tvalue="+/-" />
+      <Tecla Tvalue="==" />
+      <Tecla Tvalue="%" />
+      <Tecla Tvalue="AC" />
+      <Tecla Tvalue="7" />
+      <Tecla Tvalue="8" />
+      <Tecla Tvalue="9" />
+      <Tecla Tvalue="/" />
+      <Tecla Tvalue="4" />
+      <Tecla Tvalue="5" />
+      <Tecla Tvalue="6" />
+      <Tecla Tvalue="x" />
+      <Tecla Tvalue="1" />
+      <Tecla Tvalue="2" />
+      <Tecla Tvalue="3" />
+      <Tecla Tvalue="-" />
+      <Tecla Tvalue="0" />
+      <Tecla Tvalue="." />
+      <Tecla Tvalue="=" />
+      <Tecla Tvalue="+" />
     </div>
   )
 }

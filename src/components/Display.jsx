@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function Display({ results, concat }) {
+  // const operate = () => {}
   return (
     <div className="display">
       <h4>{concat} =</h4>
