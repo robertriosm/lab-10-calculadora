@@ -1,97 +1,101 @@
-// import React, { useEffect } from 'react'
-import React from 'react'
-// import React, { useState } from 'react'
+// import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Tecla from './Tecla'
 
-function App({ name, results }) {
-  const concat = ''
-  // let n2 = 2
+function App({ name }) {
+  // const [concat1, setConcat1] = useState('')
+  // const [op, setOp] = useState('')
+  // const [concat2, setConcat2] = useState('')
+  // const [result, setResult] = useState(0)
+  let concat1 = ''
+  const concat2 = ''
+  const op = ''
+  const result = ''
+
+  // eslint-disable-next-line consistent-return
   const getData = (data) => {
-    // eslint-disable-next-line no-console
-    console.log(data)
-    return data
+    const mydata = data
+    switch (mydata) {
+      case typeof mydata === 'number': {
+        const x = parseInt(mydata, mydata.lenght)
+        if (concat1.length < 9) {
+          concat1 += mydata
+          return x
+        }
+        break
+      }
+
+      case mydata === '+/-': {
+        break
+      }
+
+      case mydata === '==': {
+        // eslint-disable-next-line no-console
+        console.log(mydata)
+        break
+      }
+
+      case mydata === '%': {
+        // eslint-disable-next-line no-console
+        console.log(mydata)
+        break
+      }
+
+      case mydata === 'AC': {
+        // eslint-disable-next-line no-console
+        console.log(mydata)
+        break
+      }
+
+      case mydata === '/': {
+        // eslint-disable-next-line no-console
+        console.log(mydata)
+        break
+      }
+
+      case mydata === 'x': {
+        // eslint-disable-next-line no-console
+        console.log(mydata)
+        break
+      }
+
+      case mydata === '-': {
+        // eslint-disable-next-line no-console
+        console.log(mydata)
+        break
+      }
+
+      case mydata === '.': {
+        // eslint-disable-next-line no-console
+        console.log(mydata)
+        break
+      }
+
+      case mydata === '=': {
+        // eslint-disable-next-line no-console
+        console.log(mydata)
+        break
+      }
+
+      case mydata === '+': {
+        // eslint-disable-next-line no-console
+        console.log(mydata)
+        break
+      }
+
+      default: {
+        break
+      }
+    }
   }
 
-  // const operate = () => {
-  //   const mydata = getData
-  //   // eslint-disable-next-line no-console
-  //   console.log(mydata)
-  //   switch (mydata) {
-  //     case typeof mydata === 'number': {
-  //       const x = parseInt(mydata, mydata.lenght)
-  //       // eslint-disable-next-line no-console
-  //       console.log(x)
-  //       break
-  //     }
-
-  //     case mydata === '+/-': {
-  //       // eslint-disable-next-line no-console
-  //       console.log(mydata)
-  //       break
-  //     }
-
-  //     case mydata === '==': {
-  //       // eslint-disable-next-line no-console
-  //       console.log(mydata)
-  //       break
-  //     }
-
-  //     case mydata === '%': {
-  //       // eslint-disable-next-line no-console
-  //       console.log(mydata)
-  //       break
-  //     }
-
-  //     case mydata === 'AC': {
-  //       // eslint-disable-next-line no-console
-  //       console.log(mydata)
-  //       break
-  //     }
-
-  //     case mydata === '/': {
-  //       // eslint-disable-next-line no-console
-  //       console.log(mydata)
-  //       break
-  //     }
-
-  //     case mydata === 'x': {
-  //       // eslint-disable-next-line no-console
-  //       console.log(mydata)
-  //       break
-  //     }
-
-  //     case mydata === '-': {
-  //       // eslint-disable-next-line no-console
-  //       console.log(mydata)
-  //       break
-  //     }
-
-  //     case mydata === '.': {
-  //       // eslint-disable-next-line no-console
-  //       console.log(mydata)
-  //       break
-  //     }
-
-  //     case mydata === '=': {
-  //       // eslint-disable-next-line no-console
-  //       console.log(mydata)
-  //       break
-  //     }
-
-  //     case mydata === '+': {
-  //       // eslint-disable-next-line no-console
-  //       console.log(mydata)
-  //       break
-  //     }
-
-  //     default: {
-  //       break
-  //     }
-  //   }
-  // }
-
-  // useEffect(operate)
+  useEffect(() => {
+    // operate()
+    // eslint-disable-next-line no-console
+    getData()
+    // return getData
+  })
 
   // const [results, setResults] = useState('')
 
@@ -101,8 +105,12 @@ function App({ name, results }) {
       <h3>? {name} ?</h3>
       <div className="case">
         <div className="display">
-          <h4>{concat} =</h4>
-          <h3>{results}</h3>
+          <h4>
+            {concat1}
+            {op}
+            {concat2} =
+          </h4>
+          <h3>{result}</h3>
         </div>
         <div className="teclado">
           <Tecla Tvalue="+/-" fetchData={getData} />
@@ -133,7 +141,6 @@ function App({ name, results }) {
 
 App.propTypes = {
   name: PropTypes.string.isRequired,
-  results: PropTypes.string.isRequired,
 }
 
 export default App
