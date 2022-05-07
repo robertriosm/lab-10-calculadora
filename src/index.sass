@@ -1,4 +1,4 @@
-$font-color: #15ff00
+$font-color: #ff0000
 
 @import url('https://fonts.googleapis.com/css2?family=Coda&display=swap')
 
@@ -8,6 +8,9 @@ $font-color: #15ff00
     color: $font-color
     background-color: black
 
+h2, h3
+    text-align: center
+
 .app
     position: relative
     margin: auto
@@ -16,12 +19,16 @@ $font-color: #15ff00
 .case
     border: 3px solid $font-color
     border-radius: 10px
+    box-shadow: $font-color 0px 5px 15px 0px
 
+    
 // Tecla
 .tecla
     border: 2px solid $font-color
     border-radius: 10px
     margin: 10px
+    box-shadow: $font-color 0px 5px 15px 0px
+
 
 input
     border: 0
@@ -44,6 +51,7 @@ input
     display: grid
     grid-template-columns: repeat(4, 1fr)
     grid-template-rows: repeat(4, 1fr)
+    
 
 // Display
 .display
@@ -52,6 +60,7 @@ input
     height: 90px
     border: 2px solid $font-color
     font-size: 25px
+    box-shadow: $font-color 0px 5px 15px 0px
     h4
         margin: auto
         width: fit-content

@@ -115,16 +115,16 @@ function App({ name }) {
       concat2 === '' &&
       ops === ''
     ) {
-      const r = operar(concat1, concat2, ops)
-      const historial = r.toString().substring(0, 9)
-      if (historial === 'true' || historial === 'false') {
+      const r = operar(concat1, '-1', 'x')
+      const historial = r.toString()
+      if (historial.length < 10) {
         setResults(historial)
-        setConcat1('')
+        setConcat1(historial)
         setOps('')
         setConcat2('')
       } else {
-        setResults(historial)
-        setConcat1(historial)
+        setResults('error')
+        setConcat1('')
         setOps('')
         setConcat2('')
       }
