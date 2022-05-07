@@ -3,7 +3,5 @@ import ReactDOM from 'react-dom'
 import App from './components/App'
 import './index.sass'
 
-ReactDOM.render(
-  <App name="ROBERTO RIOS, 20979" />,
-  document.getElementById('app')
-)
+const myname = 'ROBERTO RIOS, 20979'
+ReactDOM.render(<App name={myname} />, document.getElementById('app'))

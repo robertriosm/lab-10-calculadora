@@ -1,103 +1,135 @@
-// import React, { useEffect, useState } from 'react'
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Tecla from './Tecla'
 
+const values = [
+  '+/-',
+  '==',
+  '%',
+  'AC',
+  '7',
+  '8',
+  '9',
+  '/',
+  '4',
+  '5',
+  '6',
+  'x',
+  '1',
+  '2',
+  '3',
+  '-',
+  '0',
+  '.',
+  '=',
+  '+',
+]
+
 function App({ name }) {
-  // const [concat1, setConcat1] = useState('')
-  // const [op, setOp] = useState('')
-  // const [concat2, setConcat2] = useState('')
-  // const [result, setResult] = useState(0)
-  let concat1 = ''
-  const concat2 = ''
-  const op = ''
-  const result = ''
+  const [concat1, setConcat1] = useState('')
+  const [ops, setOps] = useState('')
+  const [concat2, setConcat2] = useState('')
+  const [results, setResults] = useState('')
 
-  // eslint-disable-next-line consistent-return
-  const getData = (data) => {
-    const mydata = data
-    switch (mydata) {
-      case typeof mydata === 'number': {
-        const x = parseInt(mydata, mydata.lenght)
-        if (concat1.length < 9) {
-          concat1 += mydata
-          return x
-        }
-        break
+  const operar = (s1, s2, op) => {
+    const n1 = Number(s1)
+    const n2 = Number(s2)
+    let res = 0
+    if (op === '+') {
+      res = n1 + n2
+    } else if (op === '-') {
+      res = n1 - n2
+    } else if (op === 'x') {
+      res = n1 * n2
+    } else if (op === '/') {
+      res = n1 / n2
+    } else if (op === '%') {
+      res = n1 % n2
+    } else if (op === '==') {
+      res = n1 === n2
+    }
+    if (res > 999999999) {
+      return 'error'
+    }
+    return res
+  }
+
+  const concatenar = (operador) => {
+    const n = Number.parseInt(operador, 10)
+    const nIsNaN = Number.isNaN(n)
+    if (
+      (concat1 !== '' || concat2 !== '') &&
+      nIsNaN &&
+      operador !== '.' &&
+      operador !== 'AC' &&
+      operador !== '=' &&
+      operador !== '+/-' &&
+      ops === ''
+    ) {
+      setOps(operador)
+    } else if (
+      (!nIsNaN && concat1.length < 9 && ops === '' && concat2 === '') ||
+      (operador === '.' &&
+        !concat1.includes('.') &&
+        ops === '' &&
+        concat2 === '')
+    ) {
+      setConcat1(concat1 + operador)
+    } else if (
+      (!nIsNaN && concat2.length < 9 && ops !== '' && concat1 !== '') ||
+      (operador === '.' &&
+        !concat2.includes('.') &&
+        ops !== '' &&
+        concat1 !== '')
+    ) {
+      setConcat2(concat2 + operador)
+    } else if (nIsNaN && operador === 'AC') {
+      setConcat1('')
+      setConcat2('')
+      setOps('')
+      setResults(0)
+    } else if (
+      nIsNaN &&
+      operador === '=' &&
+      concat1 !== '' &&
+      concat2 !== '' &&
+      ops !== ''
+    ) {
+      const r = operar(concat1, concat2, ops)
+      const historial = r.toString().substring(0, 9)
+      if (historial === 'true' || historial === 'false') {
+        setResults(historial)
+        setConcat1('')
+        setOps('')
+        setConcat2('')
+      } else {
+        setResults(historial)
+        setConcat1(historial)
+        setOps('')
+        setConcat2('')
       }
-
-      case mydata === '+/-': {
-        break
-      }
-
-      case mydata === '==': {
-        // eslint-disable-next-line no-console
-        console.log(mydata)
-        break
-      }
-
-      case mydata === '%': {
-        // eslint-disable-next-line no-console
-        console.log(mydata)
-        break
-      }
-
-      case mydata === 'AC': {
-        // eslint-disable-next-line no-console
-        console.log(mydata)
-        break
-      }
-
-      case mydata === '/': {
-        // eslint-disable-next-line no-console
-        console.log(mydata)
-        break
-      }
-
-      case mydata === 'x': {
-        // eslint-disable-next-line no-console
-        console.log(mydata)
-        break
-      }
-
-      case mydata === '-': {
-        // eslint-disable-next-line no-console
-        console.log(mydata)
-        break
-      }
-
-      case mydata === '.': {
-        // eslint-disable-next-line no-console
-        console.log(mydata)
-        break
-      }
-
-      case mydata === '=': {
-        // eslint-disable-next-line no-console
-        console.log(mydata)
-        break
-      }
-
-      case mydata === '+': {
-        // eslint-disable-next-line no-console
-        console.log(mydata)
-        break
-      }
-
-      default: {
-        break
+    } else if (
+      nIsNaN &&
+      operador === '+/-' &&
+      concat1 !== '' &&
+      concat2 === '' &&
+      ops === ''
+    ) {
+      const r = operar(concat1, concat2, ops)
+      const historial = r.toString().substring(0, 9)
+      if (historial === 'true' || historial === 'false') {
+        setResults(historial)
+        setConcat1('')
+        setOps('')
+        setConcat2('')
+      } else {
+        setResults(historial)
+        setConcat1(historial)
+        setOps('')
+        setConcat2('')
       }
     }
   }
-
-  useEffect(() => {
-    // operate()
-    // eslint-disable-next-line no-console
-    getData()
-    // return getData
-  })
-
-  // const [results, setResults] = useState('')
 
   return (
     <div className="app">
@@ -106,33 +138,14 @@ function App({ name }) {
       <div className="case">
         <div className="display">
           <h4>
-            {concat1}
-            {op}
-            {concat2} =
+            {concat1} {ops} {concat2} =
           </h4>
-          <h3>{result}</h3>
+          <h3>{results}</h3>
         </div>
         <div className="teclado">
-          <Tecla Tvalue="+/-" fetchData={getData} />
-          <Tecla Tvalue="==" fetchData={getData} />
-          <Tecla Tvalue="%" fetchData={getData} />
-          <Tecla Tvalue="AC" fetchData={getData} />
-          <Tecla Tvalue="7" fetchData={getData} />
-          <Tecla Tvalue="8" fetchData={getData} />
-          <Tecla Tvalue="9" fetchData={getData} />
-          <Tecla Tvalue="/" fetchData={getData} />
-          <Tecla Tvalue="4" fetchData={getData} />
-          <Tecla Tvalue="5" fetchData={getData} />
-          <Tecla Tvalue="6" fetchData={getData} />
-          <Tecla Tvalue="x" fetchData={getData} />
-          <Tecla Tvalue="1" fetchData={getData} />
-          <Tecla Tvalue="2" fetchData={getData} />
-          <Tecla Tvalue="3" fetchData={getData} />
-          <Tecla Tvalue="-" fetchData={getData} />
-          <Tecla Tvalue="0" fetchData={getData} />
-          <Tecla Tvalue="." fetchData={getData} />
-          <Tecla Tvalue="=" fetchData={getData} />
-          <Tecla Tvalue="+" fetchData={getData} />
+          {values.map((signo) => (
+            <Tecla Tvalue={signo} handleClick={() => concatenar(signo)} />
+          ))}
         </div>
       </div>
     </div>
