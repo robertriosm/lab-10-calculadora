@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Tecla from './Tecla'
+import logo from '../../public/images/logo.png'
 
 const values = [
   '+/-',
@@ -133,6 +134,10 @@ function App({ name }) {
 
   return (
     <div className="app">
+      <div className="develop">
+        <img src={logo} alt="logo" height={30} />
+        <img src={logo} alt="logo" height={30} />
+      </div>
       <h2>? LABORATORIO 10: CALCULADORA ?</h2>
       <h3>? {name} ?</h3>
       <div className="case">
