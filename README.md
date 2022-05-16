@@ -15,3 +15,11 @@
 - [x] modulo
 - [x] funcion +/-
 - [x] mostrar error en caso de negativos o superiores a 9 digitos
+
+# lab 10.1 calculadora testing
+
+- [x] mejora a la interfaz (se agregaron murcielagos, como la tematica es de batman)
+- [x] implementar jest
+- [x] implementar testing-library
+- [x] configurado con `npm test`
+- [ ] 2/8 tests

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Tecla from './Tecla'
 import logo from '../../public/images/logo.png'
+// const logo = require()
 
 const values = [
   '+/-',
