@@ -14,15 +14,17 @@ const tryFunction = (aValue) => {
 // desplegar correctamente los componentes y comprobar los returns de las funciones
 // todos, aprobados, GREEN TEST
 describe('tests para la calculadora', () => {
-  // desplegar correctamente una tecla y comprobar que tiene un valor 1
-  it('desplear correctamente la tecla 1', () => {
-    render(<Tecla Tvalue="1" handleClick={tryFunction(0)} />)
-    expect(screen.getByText('1')).toBeInTheDocument()
+  // test para la suma
+  it('test de suma', () => {
+    
   })
+  // test para la resta
+  // test para la multiplicacion
+  // test para la division
+  // test para cambiar signo
+  // test para modulos
+  // test para la concatenacion
+  // test para la igualdad
 
-  // desplegar correctamente el componente App
-  it('desplegar correctamente la app', () => {
-    render(<App name="Roberto" />)
-    expect(screen.getByText('+/-')).toBeInTheDocument()
   })
 })
