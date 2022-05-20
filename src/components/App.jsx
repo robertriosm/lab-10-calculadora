@@ -145,11 +145,15 @@ function App({ name }) {
           <h4>
             {concat1} {ops} {concat2} =
           </h4>
-          <h3>{results}</h3>
+          <h3 data-testid="result">{results}</h3>
         </div>
         <div className="teclado">
           {values.map((signo) => (
-            <Tecla Tvalue={signo} handleClick={() => concatenar(signo)} />
+            <Tecla
+              key={signo}
+              Tvalue={signo}
+              handleClick={() => concatenar(signo)}
+            />
           ))}
         </div>
       </div>
