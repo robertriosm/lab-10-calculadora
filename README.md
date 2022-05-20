@@ -22,4 +22,4 @@
 - [x] implementar jest
 - [x] implementar testing-library
 - [x] configurado con `npm test`
-- [ ] 2/8 tests
+- [x] 8/8 tests no triviales
