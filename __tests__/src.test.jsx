@@ -5,7 +5,7 @@ import App from '../src/components/App'
 
 describe('tests para la calculadora', () => {
   // test para la suma
-  it('test de suma', () => {
+  it('introducir la operacion 10 + 10 =, depliga 20 en h3#result', () => {
     render(<App name="Roberto" />)
     fireEvent.click(document.getElementById('1'))
     fireEvent.click(document.getElementById('0'))
@@ -16,7 +16,7 @@ describe('tests para la calculadora', () => {
     expect(screen.getByTestId('result')).toHaveTextContent('20')
   })
   // test para la resta
-  it('test de resta', () => {
+  it('introducir la operacion 10 - 10 =, depliga 0 en h3#result', () => {
     render(<App name="Roberto" />)
     fireEvent.click(document.getElementById('1'))
     fireEvent.click(document.getElementById('0'))
@@ -27,7 +27,7 @@ describe('tests para la calculadora', () => {
     expect(screen.getByTestId('result')).toHaveTextContent('0')
   })
   // test para la multiplicacion
-  it('test de multiplicacion', () => {
+  it('introducir la operacion 10 x 10 =, depliga 100 en h3#result', () => {
     render(<App name="Roberto" />)
     fireEvent.click(document.getElementById('1'))
     fireEvent.click(document.getElementById('0'))
@@ -38,7 +38,7 @@ describe('tests para la calculadora', () => {
     expect(screen.getByTestId('result')).toHaveTextContent('100')
   })
   // test para la division
-  it('test de division', () => {
+  it('introducir la operacion 10 / 0 =, depliga un error en h3#result', () => {
     render(<App name="Roberto" />)
     fireEvent.click(document.getElementById('1'))
     fireEvent.click(document.getElementById('0'))
@@ -48,7 +48,7 @@ describe('tests para la calculadora', () => {
     expect(screen.getByTestId('result')).toHaveTextContent('error')
   })
   // test para cambiar signo
-  it('test del boton +/-', () => {
+  it('10 + 10 =, depliga 20 en h3#result, al clickear el boton +/-, depliga -20 en h3#result, al clickearlo de nuevo, depliga 20 en h3#result', () => {
     render(<App name="Roberto" />)
     fireEvent.click(document.getElementById('1'))
     fireEvent.click(document.getElementById('0'))
@@ -62,7 +62,7 @@ describe('tests para la calculadora', () => {
     expect(screen.getByTestId('result')).toHaveTextContent('20')
   })
   // test para modulos
-  it('test para modulos', () => {
+  it('introducir la operacion 10 % 1 =, depliga 0 en h3#result', () => {
     render(<App name="Roberto" />)
     fireEvent.click(document.getElementById('1'))
     fireEvent.click(document.getElementById('0'))
